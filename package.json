@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-beep-and-flag",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "NodeBB Censor Curse Words Plugin with flag option to posts",
   "deprecated": false,
   "main": "index.js",
