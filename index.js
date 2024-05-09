@@ -196,10 +196,12 @@ var Beep = {
 
 	postQueue: function({ shouldQueue,uid, data }) {
 		var starHTML = '*';
-		var badWord = Beep.parseContent(data.content, starHTML);
+		var badWordContent = Beep.parseContent(data.content, starHTML);
+		var badWordTitle = Beep.parseContent(data.title, starHTML);
 		const regex = /\b([A-Za-z]+)\*+([A-Za-z]+)\b/gi;
-		const flagger = regex.test(badWord);
-		if(flagger){
+		const flaggerContent = regex.test(badWordContent);
+		const flaggerTitle = regex.test(badWordTitle);
+		if(flaggerContent || flaggerTitle){
 			// Flags.create("post", data.post.pid, data.post.uid, "Offensive");
 			shouldQueue = true;
 		}
